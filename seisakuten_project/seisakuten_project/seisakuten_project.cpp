@@ -16,7 +16,7 @@ using namespace std;
 using namespace cv;
 
 #define NUMBERIMAGE 10 //ì«Ç›çûÇﬁé ê^ÇÃêî
-#define THRESHOLD 80
+#define THRESHOLD 200
 
 
 
@@ -49,30 +49,50 @@ int main(int argc, char const* argv[])
 	}
 	return 0;
 	*/
+
+	VideoCapture cap = VideoCapture(0);
+
+	if (!cap.isOpened())
+	{
+		printf("camera not opened");
+		return -1;
+	}
 	
-	int first =253;
+	int first =263;
 	int last = 273;
 	
 	int num = first;
 	string firstFrame_name;
-	sprintf(&firstFrame_name[0], "./image/image%d.jpg", num);
-	cv::Mat compositeFrame = cv::imread(&firstFrame_name[0], 1);
-	for (; num < last ; num++) {
-		string nowFrame_name;
+	//sprintf(&firstFrame_name[0], "image%d.jpg", num);
+	//cv::Mat compositeFrame = cv::imread(&firstFrame_name[0]);
+	Mat compositeFrame;
+	Mat frame1, frame2;
+	cap >> frame2;
+	frame2.copyTo(compositeFrame);
+	namedWindow("mi");
+	cv::imshow("mi", frame2);
+	cv::waitKey(1);
+	for (num = 0; num < 100 ; num++) {
+		/*string nowFrame_name;
 		string nextFrame_name;
 		sprintf(&nowFrame_name[0], "./image/image%d.jpg", num);
 		sprintf(&nextFrame_name[0], "./image/image%d.jpg", num+1);
 
 		cout << "number: " << num << endl;
 		cv::Mat nowFrame = cv::imread(&nowFrame_name[0]);
-		cv::Mat nextFrame = cv::imread(&nextFrame_name[0]);
+		cv::Mat nextFrame = cv::imread(&nextFrame_name[0]);*/
+		frame2.copyTo(frame1);
+		cap >> frame2;
+
 
 		//î‰ärñæçáê¨
 		for (int y = 0; y < compositeFrame.rows; y++) {
 			for (int x = 0; x < compositeFrame.cols; x++) {
 				cv::Vec3b &p_composite = compositeFrame.at<cv::Vec3b>(y, x);
-				cv::Vec3b &p_now = nowFrame.at<cv::Vec3b>(y, x);
-				cv::Vec3b &p_next = nextFrame.at<cv::Vec3b>(y, x);
+				/*cv::Vec3b &p_now = nowFrame.at<cv::Vec3b>(y, x);
+				cv::Vec3b &p_next = nextFrame.at<cv::Vec3b>(y, x);*/
+				cv::Vec3b &p_now = frame1.at<cv::Vec3b>(y, x);
+				cv::Vec3b &p_next = frame2.at<cv::Vec3b>(y, x);
 				int average_now = (p_now[0] + p_now[1] + p_now[2]) / 3.0;
 				int average_next = (p_next[0] + p_next[1] + p_next[2]) / 3.0;
 				if (average_next - average_now > THRESHOLD) {
@@ -85,9 +105,12 @@ int main(int argc, char const* argv[])
 
 		}
 		cout << endl;
+		//cv::imshow("mi", frame2);
+		cv::imshow("mi", compositeFrame);
+		cv::waitKey(100);
 	}
-	char composite_name[40];
-	sprintf(composite_name, "./composite_image/composite%d_%d.jpg", first, last);
-	cv::imwrite(&composite_name[0], compositeFrame);
+	//char composite_name[40];
+	//sprintf(composite_name, "./composite_image/composite%d_%d.jpg", first, last);
+	cv::imwrite("now.png", compositeFrame);
 	return 0;
 }

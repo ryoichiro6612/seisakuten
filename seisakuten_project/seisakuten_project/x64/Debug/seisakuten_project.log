@@ -1,13 +1,5 @@
 ﻿  seisakuten_project.cpp
-c:\users\sawon_000\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(76): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-c:\users\sawon_000\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(77): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-c:\users\sawon_000\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(58): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1772): note: 'sprintf' の宣言を確認してください
-c:\users\sawon_000\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(63): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1772): note: 'sprintf' の宣言を確認してください
-c:\users\sawon_000\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(64): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1772): note: 'sprintf' の宣言を確認してください
-c:\users\sawon_000\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(90): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1772): note: 'sprintf' の宣言を確認してください
-  seisakuten_project.vcxproj -> C:\Users\sawon_000\Documents\seisakuten\seisakuten_project\x64\Debug\seisakuten_project.exe
-  seisakuten_project.vcxproj -> C:\Users\sawon_000\Documents\seisakuten\seisakuten_project\x64\Debug\seisakuten_project.pdb (Partial PDB)
+c:\users\denjj\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(96): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\users\denjj\documents\seisakuten\seisakuten_project\seisakuten_project\seisakuten_project.cpp(97): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
+  seisakuten_project.vcxproj -> C:\Users\denjj\Documents\seisakuten\seisakuten_project\x64\Debug\seisakuten_project.exe
+  seisakuten_project.vcxproj -> C:\Users\denjj\Documents\seisakuten\seisakuten_project\x64\Debug\seisakuten_project.pdb (Partial PDB)
